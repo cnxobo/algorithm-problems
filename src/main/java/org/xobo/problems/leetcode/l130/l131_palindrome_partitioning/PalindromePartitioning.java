@@ -1,4 +1,4 @@
-package org.xobo.problems.leetcode.l130.l131palindrome_partitioning;
+package org.xobo.problems.leetcode.l130.l131_palindrome_partitioning;
 
 import java.util.List;
 
