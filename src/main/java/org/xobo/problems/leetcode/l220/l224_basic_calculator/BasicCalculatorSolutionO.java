@@ -3,7 +3,7 @@ package org.xobo.problems.leetcode.l220.l224_basic_calculator;
 import java.util.Deque;
 import java.util.LinkedList;
 
-public class BasicCalculatorSolutionO {
+public class BasicCalculatorSolutionO implements BasicCalculator {
   public int calculate(String s) {
     Deque<Integer> ops = new LinkedList<Integer>();
     ops.push(1);
@@ -35,6 +35,9 @@ public class BasicCalculatorSolutionO {
         }
         ret += sign * num;
       }
+      System.out.println("===============");
+      System.out.println(ops);
+      System.out.println(ret);
     }
     return ret;
   }
