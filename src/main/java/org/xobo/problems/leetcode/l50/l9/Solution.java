@@ -1,10 +1,11 @@
-package org.xobo.problems.leetcode.l50.l4;
+package org.xobo.problems.leetcode.l50.l9;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Solution {
+
   public static enum Direction {
     right, down, left, up;
   }
@@ -111,34 +112,31 @@ public class Solution {
     return list;
   }
 
+  public int[][] generateMatrix(int n) {
 
-  public static void main(String[] args) {
-
-    Solution solution = new Solution();
-    int[][] nums = new int[][] {{3}, {2}};
-    List<Integer> list = solution.spiralOrder(nums);
-    System.out.println(list);
-
-    int width = 10;
-    int height = 10;
+    int width = n;
+    int height = n;
     SpiralOrderMatirx spiralOrderMatirx = new SpiralOrderMatirx(width, height);
 
     int[][] arrs = new int[height][width];
 
-    System.out
-        .println("[" + spiralOrderMatirx.currWidth + ", " + spiralOrderMatirx.currHeight + "]");
-    int i = 1;
+
+    arrs[0][0] = 1;
+
+    int i = 2;
     while (spiralOrderMatirx.next()) {
 
-      System.out
-          .println("[" + spiralOrderMatirx.currWidth + ", " + spiralOrderMatirx.currHeight + "]");
-      arrs[spiralOrderMatirx.currHeight][spiralOrderMatirx.currWidth] += i;
+      arrs[spiralOrderMatirx.currHeight][spiralOrderMatirx.currWidth] = i;
       i++;
     }
 
-    for (int x = 0; x < height; x++) {
-      System.out.println(Arrays.toString(arrs[x]));
-    }
+    return arrs;
   }
 
+  public static void main(String[] args) {
+    Solution solution = new Solution();
+    System.out.println(Arrays.deepToString(solution.generateMatrix(9)));
+    System.out.println(Arrays.deepToString(solution.generateMatrix(1)));
+
+  }
 }
